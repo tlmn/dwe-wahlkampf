@@ -19,6 +19,7 @@
 
 .card {
   height: 35rem;
+  hyphens: auto;
 }
 @screen md {
   .card {
@@ -29,6 +30,18 @@
   .card {
     height: 40rem;
   }
+}
+
+p {
+  @apply my-2;
+}
+
+p:first-of-type {
+  @apply mt-0;
+}
+
+p:last-of-type {
+  @apply mb-0;
 }
 
 
