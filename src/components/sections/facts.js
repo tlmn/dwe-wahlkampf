@@ -10,6 +10,8 @@ import { SwiperSlide } from "swiper/react"
 import "swiper/swiper-bundle.css"
 import IconArrow from "../../assets/svg/arrow"
 import CloseIcon from "../../assets/svg/close"
+import BackCard from "../cards/back"
+
 
 const Facts = () => {
   const intl = useIntl()
@@ -51,7 +53,7 @@ const Facts = () => {
                               id: `facts.${index}.title`,
                             }),
                           }}
-                          className="flex-1 flex items-center text-3xl px-4 text-yellow font-bold"
+                          className="flex-1 flex items-center text-3xl px-4 text-yellow font-bold leading-tight"
                         />
                         <span className="uppercase text-yellow font-bold hover:scale-110 animated">
                           Mehr lesen
@@ -71,7 +73,7 @@ const Facts = () => {
                             id: `facts.0.body`,
                           }),
                         }}
-                        className="flex-1 flex items-center text-5xl px-4 text-yellow font-bold"
+                        className="flex-1 flex items-center text-5xl px-4 text-yellow font-bold leading-tight"
                       />
                       <IconArrow
                         className="hover:scale-110"
@@ -85,7 +87,7 @@ const Facts = () => {
                           id: `facts.${index}.body`,
                         }),
                       }}
-                      className="text-yellow text-xl px-4 py-3 flex-1 text-left overflow-y-scroll"
+                      className="text-yellow text-xl px-4 py-3 flex-1 text-left overflow-y-scroll leading-tight"
                     />
                 </Card>
               </SwiperSlide>

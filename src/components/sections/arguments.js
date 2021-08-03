@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import IconArrow from "../../assets/svg/arrow"
 import Swiper from "../atoms/swiper"
 import Card from "../cards/card"
@@ -8,9 +8,11 @@ import Number from "../number"
 import { useIntl } from "gatsby-plugin-intl"
 import Title from "../atoms/title"
 import useDataContext from "../../lib/useDataContext"
+import BackCard from "../cards/back"
 
 const Arguments = () => {
   const { state } = useDataContext()
+  
   const {
     arguments: { activeIndex },
   } = state
@@ -33,7 +35,7 @@ const Arguments = () => {
                             id: `arguments.${index}.title`,
                           }),
                         }}
-                        className="flex-1 flex items-center text-3xl px-4 text-purple font-bold"
+                        className="flex-1 flex items-center text-3xl px-4 text-purple font-bold leading-tight"
                       />
                       <span className="uppercase text-purple font-bold hover:scale-110 animated">
                         Mehr lesen
@@ -50,19 +52,17 @@ const Arguments = () => {
                             id: `arguments.0.body`,
                           }),
                         }}
-                        className="flex-1 flex items-center text-5xl px-4 text-purple font-bold"
+                        className="flex-1 flex items-center text-5xl px-4 text-purple font-bold leading-tight"
                       />
                       <IconArrow className="hover:scale-110" />
                     </>
                   )}
                 </div>
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: intl.formatMessage({
-                      id: `arguments.${index}.body`,
-                    }),
-                  }}
-                  className="text-purple text-xl px-4 py-3 flex-1 text-left overflow-y-scroll"
+                <BackCard
+                  body={intl.formatMessage({
+                    id: `arguments.${index}.body`,
+                  })}
+                  className="text-purple flex-1 text-left relative"
                 />
               </Card>
             </SwiperSlide>

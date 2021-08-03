@@ -17,10 +17,10 @@ const Landing = () => {
               <LanguageSwitch />
             </div>
           </div>
-          <span className="block text-6xl my-2">
+          <span className="block text-6xl md:text-7xl leading-none my-2">
             <FormattedHTMLMessage id="campaign.slogan" />
           </span>
-          <div className="w-full md:w-1/5">
+          <div className="w-full md:w-1/2">
             <CrossYesIcon className="object-cover w-full h-full" />
           </div>
           <div className="w-full">
