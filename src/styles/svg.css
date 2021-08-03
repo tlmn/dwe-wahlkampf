@@ -1,0 +1,11 @@
+.fill-yellow > path {
+  fill: #fdd816;
+}
+
+.fill-purple > path {
+  fill: #811c62;
+}
+
+.fill-white > path {
+  fill: #fff;
+}
