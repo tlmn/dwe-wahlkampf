@@ -15,11 +15,6 @@ const Swiper = ({ children, activeIndex = 0 }) => {
       activeSlideKey={activeIndex}
       slidesPerView={2}
       pagination={{ clickable: true }}
-      mousewheelControl={true}
-      direction={'horizontal'}
-      mousewheel={{
-        releaseOnEdges: true,
-      }}
       onRealIndexChange={event => setProgress(event.progress)}
       breakpoints={{
         0: {
