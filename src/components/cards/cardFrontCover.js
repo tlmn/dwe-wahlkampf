@@ -19,7 +19,7 @@ const CardFrontCover = ({ body, title, cardColor }) => {
       />
       <IconArrow
         fillColor={reverseCardColor(cardColor)}
-        className="hover:scale-110"
+        className="hover:scale-108"
       />
     </div>
   )

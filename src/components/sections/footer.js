@@ -35,25 +35,25 @@ const Footer = () => {
         </ul>
         <ul className="flex gap-3">
           <li>
-            <a href="" className="hover:scale-110 animated">
-              <InstagramIcon />
+            <a href="">
+              <InstagramIcon className="hover:scale-108 animated" />
             </a>
           </li>
           <li>
-            <a href="" className="hover:scale-110 animated">
-              <TwitterIcon />
+            <a href="">
+              <TwitterIcon className="hover:scale-108 animated" />
             </a>
           </li>
           <li>
-            <a href="" className="hover:scale-110 animated">
-              <FacebookIcon />
+            <a href="">
+              <FacebookIcon className="hover:scale-108 animated" />
             </a>
           </li>
         </ul>
         <a
           href="https://www.dwenteignen.de"
           target="_blank"
-          className="hover:scale-110 animated flex justify-center"
+          className="hover:scale-108 animated flex justify-center"
         >
           <LogoWordMark className="object-cover flex-1" />
         </a>

@@ -11,8 +11,8 @@
     @apply transition-all duration-200;
   }
   @variants hover {
-    .scale-110 {
-      transform: scale(1.1);
+    .scale-108 {
+      transform: scale(1.08);
     }
   }
 }

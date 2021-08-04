@@ -18,7 +18,7 @@ const CardFrontBody = ({ title, card, cardColor, index, isFlipped }) => (
     <span
       className={`uppercase text-${reverseCardColor(
         cardColor
-      )} font-bold hover:scale-110 animated`}
+      )} font-bold hover:scale-108 animated`}
     >
       Mehr lesen
     </span>

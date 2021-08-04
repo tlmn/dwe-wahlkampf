@@ -45,7 +45,7 @@ const CardBack = ({ body, cardColor, isFlipped }) => {
       </div>
       <CloseIcon
         fillColor={cardColor === "yellow" ? `purple` : `yellow`}
-        className="hover:scale-110 mt-3"
+        className="hover:scale-108 mt-3"
       />
     </>
   )
