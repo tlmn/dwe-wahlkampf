@@ -1,13 +1,13 @@
 import React from "react"
 
-const FacebookIcon = ({ fillColor = "purple" }) => {
+const FacebookIcon = ({ fillColor = "purple", className = "" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="60"
       height="61"
       viewBox="0 0 60 61"
-      className={`fill-${fillColor}`}
+      className={`fill-${fillColor} ${className}`}
     >
       <path
         fillRule="evenodd"
