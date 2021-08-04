@@ -26,6 +26,7 @@ const LanguageSwitch = ({ className }) => {
   )
   const updateLocale = newLocale => {
     setState(prev => ({ ...prev, currentLocale: newLocale }))
+    changeLocale(newLocale)
     setShowModal(prev => !prev)
   }
 
