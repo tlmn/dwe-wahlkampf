@@ -13,7 +13,7 @@ const CardFrontCover = ({ body, title, cardColor }) => {
         dangerouslySetInnerHTML={{
           __html: body,
         }}
-        className={`flex-1 flex items-center text-5xl px-4 text-${reverseCardColor(
+        className={`flex-1 flex items-center text-5xl text-${reverseCardColor(
           cardColor
         )} font-bold leading-tight`}
       />

@@ -3,7 +3,7 @@ import ArrowDown from "../../assets/svg/arrowDown"
 import CloseIcon from "../../assets/svg/close"
 import { reverseCardColor } from "../../lib/lib"
 
-const CardBack = ({ body, cardColor, isFlipped, ...props }) => {
+const CardBack = ({ body, cardColor, isFlipped }) => {
   const [scrollPosition, setScrollPosition] = useState({
     height: 0,
     position: 0,
@@ -19,7 +19,6 @@ const CardBack = ({ body, cardColor, isFlipped, ...props }) => {
       })),
     [bodyRef?.current?.scrollTop]
   )
-  useEffect(() => (bodyRef.current.scrollTop = 0), [isFlipped])
   return (
     <>
       <div
