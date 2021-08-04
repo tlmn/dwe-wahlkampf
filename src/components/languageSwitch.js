@@ -57,7 +57,7 @@ const LanguageSwitch = ({ className }) => {
                   currentLocale === langs[index]?.code
                     ? `bg-yellow text-purple`
                     : `text-yellow`
-                } font-bold px-2 leading-none`}
+                } font-bold px-2 leading-none hover:scale-110`}
                 style={{
                   ...rest,
                   transform: x.to(x => `translate3d(0,${x}px,0)`),
