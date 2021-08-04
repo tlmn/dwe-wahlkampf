@@ -7,14 +7,16 @@ const Card = ({
   children,
   cardColor = "yellow",
   isFlippable = true,
-  currentStack = "",
+  stack = "",
+  index,
 }) => {
   const { setState, state } = useDataContext()
   const [isFlipped, setIsFlipped] = useState(false)
-  const handleClick = () => setIsFlipped(!isFlipped)
-  const moveActiveIndex = () => {
-    setState(prev => set(prev, `${currentStack}.activeIndex`, 2))
+  const handleClick = () => {
+    setIsFlipped(!isFlipped)
+    !isFlippable && setState(prev => set(prev, `${stack}.activeIndex`, 2))
   }
+
   return (
     <>
       {isFlippable ? (

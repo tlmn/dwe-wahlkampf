@@ -3,8 +3,6 @@ import React from "react"
 const CrossIcon = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1169"
-    height="1225"
     viewBox="0 0 1169 1225"
     fill="none"
     {...props}

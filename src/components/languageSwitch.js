@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import LanguageSwitchIcon from "../assets/svg/languageSwitch"
 import { langs } from "../data/lang"
 import CloseIcon from "../assets/svg/close"
 
-import { useTrail, animated as a } from "react-spring"
+import { useTrail, animated as a, useSpring } from "react-spring"
 import useDataContext from "../lib/useDataContext"
-import { changeLocale, locale } from "gatsby-plugin-intl"
+import { changeLocale } from "gatsby-plugin-intl"
 
 const config = { mass: 1, tension: 1000, friction: 200 }
 
 const LanguageSwitch = ({ className }) => {
   const { state, setState } = useDataContext()
-  const { currentLocale } = state
-  const [showModal, setShowModal] = useState(false)
+  const { currentLocale, showModal } = state
   const trail = useTrail(langs.length, {
     config,
     opacity: showModal ? 1 : 0,
@@ -25,9 +24,12 @@ const LanguageSwitch = ({ className }) => {
     [showModal]
   )
   const updateLocale = newLocale => {
-    setState(prev => ({ ...prev, currentLocale: newLocale }))
     changeLocale(newLocale)
-    setShowModal(prev => !prev)
+    setState(prev => ({
+      ...prev,
+      currentLocale: newLocale,
+      showModal: !prev.showModal,
+    }))
   }
 
   return (
@@ -36,7 +38,9 @@ const LanguageSwitch = ({ className }) => {
         className={`hover:scale-108 animated ${
           showModal ? `absolute z-50` : ``
         }`}
-        onClick={() => setShowModal(!showModal)}
+        onClick={() =>
+          setState(prev => ({ ...prev, showModal: !prev.showModal }))
+        }
       >
         {!showModal ? (
           <LanguageSwitchIcon className={className} />
@@ -48,7 +52,7 @@ const LanguageSwitch = ({ className }) => {
         className={`${
           showModal === true ? `block` : `hidden`
         } fixed z-20 w-screen h-screen bg-purple top-0 left-0 flex items-center justify-center`}
-        onClick={() => setShowModal(!showModal)}
+        onClick={() => setState(prev => ({ ...prev, showModal: false }))}
       >
         <div className="flex flex-col items-center">
           {showModal &&
@@ -58,7 +62,7 @@ const LanguageSwitch = ({ className }) => {
                   currentLocale === langs[index]?.code
                     ? `bg-yellow text-purple`
                     : `text-yellow`
-                } font-bold px-2 leading-none hover:scale-108`}
+                } rounded-3xl font-bold px-2 leading-none hover:scale-108`}
                 style={{
                   ...rest,
                   transform: x.to(x => `translate3d(0,${x}px,0)`),
@@ -70,7 +74,6 @@ const LanguageSwitch = ({ className }) => {
               </a.button>
             ))}
         </div>
-        {locale}
       </div>
     </>
   )

@@ -21,6 +21,7 @@
   height: 35rem;
   hyphens: auto;
 }
+
 @screen md {
   .card {
     height: 30rem;
@@ -30,6 +31,28 @@
   .card {
     height: 40rem;
   }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(15px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animation-bounce {
+  animation-name: bounce;
+  animation-timing-function: ease;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
 p {
@@ -43,7 +66,6 @@ p:first-of-type {
 p:last-of-type {
   @apply mb-0;
 }
-
 
 @import "./svg.css";
 @import "./fonts.css";

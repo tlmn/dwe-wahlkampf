@@ -1,15 +1,28 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from "react"
+import { animated, useSpring } from "react-spring"
 import ArrowDown from "../../assets/svg/arrowDown"
 import CloseIcon from "../../assets/svg/close"
-import { reverseCardColor } from "../../lib/lib"
+import { reverseCardColor, getRGB } from "../../lib/lib"
 
 const CardBack = ({ body, cardColor, isFlipped }) => {
   const [scrollPosition, setScrollPosition] = useState({
     height: 0,
     position: 0,
   })
+  
+  const [showArrow, setShowArrow] = useState(true)
   const { height, position } = scrollPosition
   const bodyRef = useRef(null)
+
+  useEffect(
+    () => (position < height - 50 ? setShowArrow(true) : setShowArrow(false)),
+    [position, height]
+  )
+
+  const styles = useSpring({
+    opacity: showArrow ? 1 : 0,
+    config: { duration: 200, tension: 2000 },
+  })
 
   useLayoutEffect(
     () =>
@@ -22,7 +35,7 @@ const CardBack = ({ body, cardColor, isFlipped }) => {
   return (
     <>
       <div
-        className="flex-1 overflow-y-scroll "
+        className="flex-1 overflow-y-scroll"
         onScroll={e =>
           setScrollPosition(prev => ({
             ...prev,
@@ -31,17 +44,22 @@ const CardBack = ({ body, cardColor, isFlipped }) => {
         }
         ref={bodyRef}
       >
-        <div className="relative px-4 py-3 ">
-          <span
-            dangerouslySetInnerHTML={{ __html: body }}
-            className={`text-left text-${reverseCardColor(cardColor)}`}
-          />
-        </div>
-        {position < height - 50 && (
-          <div className="sticky bottom-0 justify-center flex pb-2">
-            <ArrowDown fillColor={reverseCardColor(cardColor)} width={40} />
-          </div>
-        )}
+        <span
+          dangerouslySetInnerHTML={{ __html: body }}
+          className={`block text-left px-4 text-${reverseCardColor(cardColor)}`}
+        />
+
+        <animated.div
+          className="sticky bottom-0 justify-center flex py-1"
+          style={{
+            background: `linear-gradient(0deg, rgba(${getRGB(
+              cardColor
+            )}, 1) 50%, rgba(255, 255,255, 0) 100%)`,
+            ...styles,
+          }}
+        >
+          <ArrowDown fillColor={reverseCardColor(cardColor)} width={40} />
+        </animated.div>
       </div>
       <CloseIcon
         fillColor={cardColor === "yellow" ? `purple` : `yellow`}

@@ -1,21 +1,20 @@
-import React, { useState } from "react"
-import SwiperCore, { Keyboard, Mousewheel, Controller } from "swiper";
+import React, { useEffect, useState } from "react"
+import SwiperCore, { Keyboard, Mousewheel, Controller } from "swiper"
 import { Swiper as ReactSwiper } from "swiper/react"
 import "swiper/swiper-bundle.css"
 import PropTypes from "prop-types"
 
-SwiperCore.use([Keyboard, Mousewheel, Controller]);
+SwiperCore.use([Keyboard, Mousewheel, Controller])
 
-const Swiper = ({ children, activeIndex = 0 }) => {
+const Swiper = ({ children }) => {
   const [progress, setProgress] = useState(0)
+  useEffect(() => console.log(progress), [progress])
 
   return (
     <ReactSwiper
       spaceBetween={50}
-      activeSlideKey={activeIndex}
       slidesPerView={2}
-      pagination={{ clickable: true }}
-      onRealIndexChange={event => setProgress(event.progress)}
+      onRealIndexChange={event => setProgress(event.activeIndex)}
       breakpoints={{
         0: {
           slidesPerView: 1,
