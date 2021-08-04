@@ -10,8 +10,8 @@ const Footer = () => {
   const intl = useIntl()
   return (
     <div className="bg-yellow pb-5">
-      <div className="container flex flex-col items-end md:items-center gap-2">
-        <ul className="flex flex-col items-end md:justify-center md:flex-row md:gap-2">
+      <div className="container flex flex-col items-end md:items-center gap-3">
+        <ul className="flex flex-col items-end md:justify-center md:flex-row md:gap-3">
           <li>
             <Button internal={false} link="">
               Spenden
@@ -33,7 +33,7 @@ const Footer = () => {
             </Button>
           </li>
         </ul>
-        <ul className="flex gap-2">
+        <ul className="flex gap-3">
           <li>
             <a href="" className="hover:scale-110 animated">
               <InstagramIcon />

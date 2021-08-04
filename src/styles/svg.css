@@ -1,11 +1,11 @@
-.fill-yellow > path {
+.fill-yellow, .fill-yellow > path {
   fill: #fdd816;
 }
 
-.fill-purple > path {
+.fill-purple, .fill-purple > path {
   fill: #811c62;
 }
 
-.fill-white > path {
+.fill-white, .fill-white > path {
   fill: #fff;
 }
