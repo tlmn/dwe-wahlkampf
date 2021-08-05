@@ -13,11 +13,6 @@ const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
   const [currentSwiper, setCurrentSwiper] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  console.log(currentSwiper)
-  useEffect(
-    () => console.log(get(state, `${stack}.swiper.slides`).length),
-    [state]
-  )
   return (
     <>
       <div className="flex justify-center gap-2">
