@@ -18,19 +18,21 @@ const Arguments = () => {
   const intl = useIntl()
 
   const cardColor = "yellow"
+  const stack = "arguments"
 
   return (
     <div className="bg-purple pb-8">
       <div className="container">
-        <Swiper className="flex" activeIndex={activeIndex}>
+        <Swiper className="flex" activeIndex={activeIndex} stack={stack}>
           {[0, 1, 2, 3, 4, 5].map((e, index) => (
             <SwiperSlide>
-              <Card isFlippable={index > 0} stack="arguments">
+              <Card isFlippable={index > 0} stack={stack}>
                 {index === 0 ? (
                   <CardFrontCover
                     title={intl.formatMessage({ id: "arguments.0.title" })}
                     body={intl.formatMessage({ id: "arguments.0.body" })}
                     cardColor={cardColor}
+                    stack={stack}
                   />
                 ) : (
                   <CardFrontBody

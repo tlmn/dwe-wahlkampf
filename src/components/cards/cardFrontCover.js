@@ -1,11 +1,17 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Title from "../atoms/title"
 import IconArrow from "../../assets/svg/arrow"
 import { reverseCardColor } from "../../lib/lib"
+import useDataContext from "../../lib/useDataContext"
 
-const CardFrontCover = ({ body, title, cardColor }) => {
+const CardFrontCover = ({ body, title, cardColor, stack }) => {
+  const { state } = useDataContext()
+
   return (
-    <div className="flex flex-col items-center h-full">
+    <div
+      className="flex flex-col items-center h-full"
+      onClick={() => state[stack].swiper.slideNext()}
+    >
       <Title className={`text-${cardColor} bg-${reverseCardColor(cardColor)}`}>
         {title}
       </Title>

@@ -20,6 +20,7 @@ const Facts = () => {
   const intl = useIntl()
 
   const cardColor = "purple"
+  const stack = "facts"
 
   return (
     <div className="bg-purple">
@@ -39,12 +40,12 @@ const Facts = () => {
           </Body>
         </div>
         <div className="container">
-          <Swiper className="flex" activeIndex={activeIndex}>
+          <Swiper className="flex" activeIndex={activeIndex} stack={stack}>
             {[0, 1, 2, 3, 4, 5].map((e, index) => (
               <SwiperSlide>
                 <Card
                   isFlippable={index > 0}
-                  stack="facts"
+                  stack={stack}
                   cardColor={cardColor}
                 >
                   {index === 0 ? (
@@ -52,6 +53,7 @@ const Facts = () => {
                       title={intl.formatMessage({ id: "facts.0.title" })}
                       body={intl.formatMessage({ id: "facts.0.body" })}
                       cardColor={cardColor}
+                      stack={stack}
                     />
                   ) : (
                     <CardFrontBody
