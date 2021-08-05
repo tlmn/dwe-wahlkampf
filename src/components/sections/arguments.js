@@ -23,7 +23,7 @@ const Arguments = () => {
   return (
     <div className="bg-purple pb-8">
       <div className="container">
-        <Swiper className="flex" activeIndex={activeIndex} stack={stack}>
+        <Swiper className="flex" activeIndex={activeIndex} stack={stack} cardColor={cardColor}>
           {[0, 1, 2, 3, 4, 5].map((e, index) => (
             <SwiperSlide>
               <Card isFlippable={index > 0} stack={stack}>
