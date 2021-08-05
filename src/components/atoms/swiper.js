@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import SwiperCore, { Keyboard, Mousewheel, Controller } from "swiper"
 import { Swiper as ReactSwiper } from "swiper/react"
 import "swiper/swiper-bundle.css"
 import PropTypes from "prop-types"
 import useDataContext from "../../lib/useDataContext"
-import { get, set } from "lodash"
+import { set } from "lodash"
 
 SwiperCore.use([Keyboard, Mousewheel, Controller])
 
