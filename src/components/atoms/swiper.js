@@ -7,7 +7,7 @@ import useDataContext from "../../lib/useDataContext"
 import { set } from "lodash"
 import { useIntl } from "gatsby-plugin-intl"
 
-SwiperCore.use([Keyboard, Mousewheel, Controller])
+SwiperCore.use([Controller])
 
 const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
   const { setState } = useDataContext()
