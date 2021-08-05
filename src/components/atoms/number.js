@@ -10,7 +10,7 @@ const Number = ({ children, className = "" }) => {
   
   return (
     <h3
-      className={`rounded-full ${className} font-bold text-4xl py-2 inline-block`}
+      className={`rounded-full ${className} font-bold text-4xl py-2 inline-block text-center`}
       ref={ref}
       style={{ width: `${width}px` }}
     >
