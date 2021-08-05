@@ -3,7 +3,7 @@ import LanguageSwitchIcon from "../assets/svg/languageSwitch"
 import { langs } from "../data/lang"
 import CloseIcon from "../assets/svg/close"
 
-import { useTrail, animated as a, useSpring } from "react-spring"
+import { useTrail, animated as a } from "react-spring"
 import useDataContext from "../lib/useDataContext"
 import { changeLocale } from "gatsby-plugin-intl"
 
@@ -48,7 +48,7 @@ const LanguageSwitch = ({ className }) => {
           <CloseIcon className={className} />
         )}
       </button>
-      <div
+      <button
         className={`${
           showModal === true ? `block` : `hidden`
         } fixed z-20 w-screen h-screen bg-purple top-0 left-0 flex items-center justify-center`}
@@ -74,7 +74,7 @@ const LanguageSwitch = ({ className }) => {
               </a.button>
             ))}
         </div>
-      </div>
+      </button>
     </>
   )
 }
