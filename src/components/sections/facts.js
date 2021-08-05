@@ -28,7 +28,7 @@ const Facts = () => {
         className="bg-yellow flex flex-col items-center justify-center py-16"
         style={{
           clipPath:
-            "polygon(0% 0%, calc(50% - 30px) 0%, 50% 30px, calc(50% + 30px) 0%, 100% 0%, 100% 100%, 0% 100%)",
+            "polygon(0% 0%, calc(50% - 30px) 0%, 50% 30px, calc(50% + 30px) 0%, 100% 0%, 100% 101%, 0% 101%)",
         }}
       >
         <div className="w-full flex flex-col justify-center">
