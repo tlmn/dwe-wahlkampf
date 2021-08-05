@@ -20,6 +20,22 @@ const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
   )
   return (
     <>
+      <div className="flex justify-center gap-2">
+        {currentSwiper?.slides?.length &&
+          Array.from({ length: currentSwiper?.slides?.length }, () => 0).map(
+            (v, index) => (
+              <button
+                style={{
+                  width: "10px",
+                  height: "10px",
+                  opacity: currentSlide === index ? `1` : `0.5`,
+                }}
+                onClick={() => currentSwiper?.slideTo(index)}
+                className={`bg-${cardColor} rounded-full`}
+              />
+            )
+          )}
+      </div>
       <ReactSwiper
         spaceBetween={50}
         slidesPerView={2}
@@ -49,22 +65,6 @@ const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
       >
         {children}
       </ReactSwiper>
-      <div className="flex justify-center gap-2">
-        {currentSwiper?.slides?.length &&
-          Array.from({ length: currentSwiper?.slides?.length }, () => 0).map(
-            (v, index) => (
-              <button
-                style={{
-                  width: "10px",
-                  height: "10px",
-                  opacity: currentSlide === index ? `1` : `0.5`,
-                }}
-                onClick={() => currentSwiper?.slideTo(index)}
-                className={`bg-${cardColor} rounded-full`}
-              />
-            )
-          )}
-      </div>
     </>
   )
 }
