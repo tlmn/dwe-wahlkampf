@@ -1,9 +1,4 @@
 import React from "react"
-import { theme } from "../../../tailwind.config"
-
-const {
-  extend: { colors },
-} = theme
 
 const CloseIcon = ({ className = "", fillColor = "yellow" }) => (
   <svg
