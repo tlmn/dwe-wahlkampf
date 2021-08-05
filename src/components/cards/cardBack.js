@@ -50,11 +50,12 @@ const CardBack = ({ body, cardColor, isFlipped }) => {
         />
 
         <animated.div
-          className="sticky bottom-0 justify-center flex py-1"
+          className="sticky justify-center flex py-1"
           style={{
             background: `linear-gradient(0deg, rgba(${getRGB(
               cardColor
             )}, 1) 50%, rgba(255, 255,255, 0) 100%)`,
+            bottom: '-2px',
             ...styles,
           }}
         >
