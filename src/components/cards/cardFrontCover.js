@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Title from "../atoms/title"
 import IconArrow from "../../assets/svg/arrow"
 import { reverseCardColor } from "../../lib/lib"
@@ -8,7 +8,7 @@ const CardFrontCover = ({ body, title, cardColor, stack }) => {
   const { state } = useDataContext()
 
   return (
-    <div
+    <button
       className="flex flex-col items-center h-full"
       onClick={() => state[stack].swiper.slideNext()}
     >
@@ -27,7 +27,7 @@ const CardFrontCover = ({ body, title, cardColor, stack }) => {
         fillColor={reverseCardColor(cardColor)}
         className="hover:scale-108 animation-bounce"
       />
-    </div>
+    </button>
   )
 }
 

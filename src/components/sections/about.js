@@ -1,6 +1,4 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import Card from "../cards/card"
 import Title from "../atoms/title"
 import Body from "../atoms/body"
 import { useIntl } from "gatsby-plugin-intl"

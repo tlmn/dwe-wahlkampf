@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect, useEffect } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { animated, useSpring } from "react-spring"
 import ArrowDown from "../../assets/svg/arrowDown"
 import CloseIcon from "../../assets/svg/close"
@@ -24,7 +24,7 @@ const CardBack = ({ body, cardColor, isFlipped }) => {
     config: { duration: 200, tension: 2000 },
   })
 
-  useLayoutEffect(
+  useEffect(
     () =>
       setScrollPosition(prev => ({
         ...prev,

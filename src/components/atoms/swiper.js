@@ -5,11 +5,13 @@ import "swiper/swiper-bundle.css"
 import PropTypes from "prop-types"
 import useDataContext from "../../lib/useDataContext"
 import { set } from "lodash"
+import { useIntl } from "gatsby-plugin-intl"
 
 SwiperCore.use([Keyboard, Mousewheel, Controller])
 
 const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
-  const { state, setState } = useDataContext()
+  const { setState } = useDataContext()
+  const intl = useIntl()
   const [currentSwiper, setCurrentSwiper] = useState(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -20,6 +22,7 @@ const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
           Array.from({ length: currentSwiper?.slides?.length }, () => 0).map(
             (v, index) => (
               <button
+                aria-label={intl.formatMessage({ id: "common.slideTo" })}
                 style={{
                   width: "10px",
                   height: "10px",

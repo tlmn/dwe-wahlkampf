@@ -14,17 +14,17 @@ const Footer = () => {
         <ul className="flex flex-col items-end md:justify-center md:flex-row md:gap-3">
           <li>
             <Button internal={false} link="">
-              Spenden
+              {intl.formatMessage({ id: "common.donate" })}
             </Button>
           </li>
           <li>
             <Button internal={false} link="">
-              Mitmachen
+              {intl.formatMessage({ id: "common.takeAction" })}
             </Button>
           </li>
           <li>
             <Button internal={true} link="">
-              Kontakt
+              {intl.formatMessage({ id: "common.contact" })}
             </Button>
           </li>
           <li>

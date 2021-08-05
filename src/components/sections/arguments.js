@@ -13,18 +13,15 @@ const Arguments = () => {
   const { state } = useDataContext()
 
   const {
-    arguments: { activeIndex },
+    arguments: { activeIndex, length, cardColor, stack },
   } = state
   const intl = useIntl()
-
-  const cardColor = "yellow"
-  const stack = "arguments"
 
   return (
     <div className="bg-purple pb-8">
       <div className="container">
         <Swiper className="flex" activeIndex={activeIndex} stack={stack} cardColor={cardColor}>
-          {[0, 1, 2, 3, 4, 5].map((e, index) => (
+          {Array.from({ length: length }, () => 0).map((e, index) => (
             <SwiperSlide>
               <Card isFlippable={index > 0} stack={stack}>
                 {index === 0 ? (
