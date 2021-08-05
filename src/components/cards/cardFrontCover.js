@@ -21,7 +21,7 @@ const CardFrontCover = ({ body, title, cardColor, stack }) => {
         }}
         className={`flex-1 flex items-center text-5xl text-${reverseCardColor(
           cardColor
-        )} font-bold leading-tight`}
+        )} px-2 font-bold leading-tight`}
       />
       <IconArrow
         fillColor={reverseCardColor(cardColor)}

@@ -14,7 +14,7 @@ const CardFrontBody = ({ title, card, cardColor, index, isFlipped }) => {
         dangerouslySetInnerHTML={{
           __html: title,
         }}
-        className={`flex-1 flex items-center text-3xl text-${reverseCardColor(
+        className={`flex-1 px-2 flex items-center text-3xl text-${reverseCardColor(
           cardColor
         )} font-bold leading-tight`}
       />
