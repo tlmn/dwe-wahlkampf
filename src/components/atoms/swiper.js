@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import SwiperCore, { Keyboard, Mousewheel, Controller } from "swiper"
+import SwiperCore, { Controller, Mousewheel } from "swiper"
 import { Swiper as ReactSwiper } from "swiper/react"
 import "swiper/swiper-bundle.css"
 import PropTypes from "prop-types"
@@ -7,7 +7,7 @@ import useDataContext from "../../lib/useDataContext"
 import { set } from "lodash"
 import { useIntl } from "gatsby-plugin-intl"
 
-SwiperCore.use([Controller])
+SwiperCore.use([Controller, Mousewheel])
 
 const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
   const { setState } = useDataContext()
@@ -59,6 +59,9 @@ const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
             slidesPerView: 3.2,
             spaceBetween: 40,
           },
+        }}
+        mousewheel={{
+          forceToAxis: true,
         }}
       >
         {children}
