@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Deutsche Wohnen & Co. enteignen!`,
-    description: ``,
-    author: ``,
+    description: `Am 26.9. können die Berliner:innen die Mietenkrise in der Stadt beenden. Erfahre, warum der Volksentscheid "Deutsche Wohnen & Co enteignen!" wichtig ist und stimme mit JA!  `,
+    author: `Initiative Deutsche Wohnen & Co. enteignen!`,
     siteUrl: `https://www.dwenteignen.de`,
   },
   plugins: [
