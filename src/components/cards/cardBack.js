@@ -35,7 +35,7 @@ const CardBack = ({ body, cardColor, isFlipped }) => {
   return (
     <>
       <div
-        className="flex-1 overflow-y-scroll"
+        className="flex-1 overflow-y-auto overflow-x-hidden"
         onScroll={e =>
           setScrollPosition(prev => ({
             ...prev,
