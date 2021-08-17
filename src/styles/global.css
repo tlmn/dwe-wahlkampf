@@ -69,3 +69,10 @@ p:last-of-type {
 
 @import "./svg.css";
 @import "./fonts.css";
+
+@layer utilities {
+  .uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.03em
+  }
+}
