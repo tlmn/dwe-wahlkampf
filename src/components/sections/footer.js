@@ -13,22 +13,22 @@ const Footer = () => {
       <div className="container flex flex-col items-end md:items-center gap-3">
         <ul className="flex flex-col items-end md:justify-center md:flex-row md:gap-3">
           <li>
-            <Button internal={false} link="">
+            <Button internal={false} link="https://www.startnext.com/dwenteignen21">
               {intl.formatMessage({ id: "common.donate" })}
             </Button>
           </li>
           <li>
-            <Button internal={false} link="">
+            <Button internal={false} link="https://www.dwenteignen.de/mitmachen/">
               {intl.formatMessage({ id: "common.takeAction" })}
             </Button>
           </li>
           <li>
-            <Button internal={true} link="">
+            <Button internal={true} link="https://www.dwenteignen.de/kontakt/">
               {intl.formatMessage({ id: "common.contact" })}
             </Button>
           </li>
           <li>
-            <Button internal={true} link="">
+            <Button internal={true} link="https://www.dwenteignen.de/impressum/">
               Impressum
             </Button>
           </li>

@@ -15,7 +15,12 @@ const Landing = () => {
       <div className="container flex py-4" style={{ minHeight: "90vh" }}>
         <div className="container flex justify-between flex-col">
           <div className="flex-1 flex items-start justify-center w-full">
-            <LogoWordMark className="object-cover flex-1" />
+            <a
+              href="https://www.dwenteignen.de"
+              className="hover:scale-108 animated flex justify-center mt-4"
+            >
+              <LogoWordMark className="object-cover flex-1" />
+            </a>
             <div className="flex flex-1 justify-end">
               {/* <LanguageSwitch /> */}
             </div>
