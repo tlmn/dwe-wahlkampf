@@ -17,7 +17,7 @@ const Landing = () => {
           <div className="flex-1 flex items-start justify-center w-full">
             <LogoWordMark className="object-cover flex-1" />
             <div className="flex flex-1 justify-end">
-              <LanguageSwitch />
+              {/* <LanguageSwitch /> */}
             </div>
           </div>
           <span className="block text-6xl md:text-7xl leading-none my-2">
