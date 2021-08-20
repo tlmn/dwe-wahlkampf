@@ -11,6 +11,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `src/assets/images`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `dwe-campaign`,
@@ -26,7 +33,7 @@ module.exports = {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/data/intl`,
-        languages: [`de`, `en`, `tr`],
+        languages: [`de`],
         defaultLanguage: `de`,
         redirect: true,
       },
