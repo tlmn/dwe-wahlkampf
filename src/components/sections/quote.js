@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useIntl } from "gatsby-plugin-intl"
 import { randomGenerator } from "../../lib/lib"
 
 const Quote = () => {
+  const [randomIndex, setRandomIndex] = useState(null)
   const intl = useIntl()
   const data = useStaticQuery(graphql`
     {
@@ -22,8 +23,9 @@ const Quote = () => {
     allImageSharp: { nodes },
   } = data
 
-  const randomIndex = randomGenerator(0, nodes.length - 1)
-  console.log(randomIndex)
+  useEffect(() => {
+    setRandomIndex(randomGenerator(0, nodes.length - 1))
+  }, [])
 
   return (
     <div className="bg-yellow">
@@ -38,27 +40,31 @@ const Quote = () => {
           <>
             <div className="col-span-10 col-start-2 md:col-span-5 md:col-start-1 py-4 md:py-0">
               <img
-                srcSet={nodes[randomIndex].fluid.srcSet}
+                srcSet={nodes[randomIndex]?.fluid.srcSet}
                 className="image-shadow"
               />
             </div>
             <div className="col-span-10 col-start-2 md:col-span-6 md:col-start-7 py-4 md:py-0">
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: intl.formatMessage({
-                    id: `quotes.${randomIndex}.quote`,
-                  }),
-                }}
-                className="block text-yellow leading-tight text-2xl md:text-5xl font-bold"
-              />
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: intl.formatMessage({
-                    id: `quotes.${randomIndex}.author`,
-                  }),
-                }}
-                className="block text-yellow leading-tight uppercase mt-3"
-              />
+              {randomIndex !== null && (
+                <>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `quotes.${randomIndex}.quote`,
+                      }),
+                    }}
+                    className="block text-yellow leading-tight text-2xl md:text-5xl font-bold"
+                  />
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: intl.formatMessage({
+                        id: `quotes.${randomIndex}.author`,
+                      }),
+                    }}
+                    className="block text-yellow leading-tight uppercase mt-3"
+                  />
+                </>
+              )}
             </div>
           </>
         </div>
