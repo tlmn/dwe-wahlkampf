@@ -67,12 +67,22 @@ p:last-of-type {
   @apply mb-0;
 }
 
+.image-shadow {
+  filter: drop-shadow(16px 16px 0px theme('colors.yellow'));
+}
+
+@screen md {
+  .image-shadow {
+    filter: drop-shadow(20px 20px 0px theme('colors.yellow'));
+  }
+}
+
 @import "./svg.css";
 @import "./fonts.css";
 
 @layer utilities {
   .uppercase {
     text-transform: uppercase;
-    letter-spacing: 0.03em
+    letter-spacing: 0.03em;
   }
 }
