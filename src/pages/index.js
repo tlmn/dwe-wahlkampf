@@ -5,6 +5,7 @@ import Landing from "../components/sections/landing"
 import About from "../components/sections/about"
 import Arguments from "../components/sections/arguments"
 import Facts from "../components/sections/facts"
+import Quote from "../components/sections/quote"
 import Footer from "../components/sections/footer"
 
 const IndexPage = () => {
@@ -15,6 +16,7 @@ const IndexPage = () => {
       <About />
       <Arguments />
       <Facts />
+      <Quote />
       <Footer />
     </Layout>
   )
