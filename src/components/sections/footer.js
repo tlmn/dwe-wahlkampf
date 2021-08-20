@@ -9,7 +9,7 @@ import FacebookIcon from "../../assets/svg/social/facebook"
 const Footer = () => {
   const intl = useIntl()
   return (
-    <div className="bg-yellow pb-5">
+    <div className="bg-yellow py-5">
       <div className="container flex flex-col items-end md:items-center gap-3">
         <ul className="flex flex-col items-end md:justify-center md:flex-row md:gap-3">
           <li>
