@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useIntl } from "gatsby-plugin-intl"
 import { randomGenerator } from "../../lib/lib"
+import { Swiper as ReactSwiper, SwiperSlide } from "swiper/react"
+import SwiperCore, { Autoplay, Controller } from "swiper/core"
+
+SwiperCore.use([Autoplay, Controller])
 
 const Quote = () => {
-  const [randomIndex, setRandomIndex] = useState(null)
+  const [currentSwiper, setCurrentSwiper] = useState(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
   const intl = useIntl()
   const data = useStaticQuery(graphql`
     {
@@ -24,33 +30,44 @@ const Quote = () => {
   } = data
 
   useEffect(() => {
-    setRandomIndex(randomGenerator(0, nodes.length - 1))
-  }, [])
+    setCurrentSlide(randomGenerator(0, nodes.length - 1))
+    currentSwiper?.slideTo(currentSlide)
+  }, [currentSwiper])
 
   return (
     <div className="bg-yellow">
       <div
-        className="bg-purple flex flex-col items-center justify-center py-16"
+        className="bg-purple flex flex-col items-center justify-center pt-5 pb-3"
         style={{
           clipPath:
             "polygon(0% 0%, calc(50% - 30px) 0%, 50% 30px, calc(50% + 30px) 0%, 100% 0%, 100% 101%, 0% 101%)",
         }}
       >
-        <div className="container py-6 grid grid-cols-12">
-          <>
-            <div className="col-span-10 col-start-2 md:col-span-5 md:col-start-1 py-4 md:py-0">
-              <img
-                srcSet={nodes[randomIndex]?.fluid.srcSet}
-                className="image-shadow"
-              />
-            </div>
-            <div className="col-span-10 col-start-2 md:col-span-6 md:col-start-7 py-4 md:py-0">
-              {randomIndex !== null && (
-                <>
+        <div className="container py-6">
+          <ReactSwiper
+            spaceBetween={50}
+            slidesPerView={1}
+            mousewheel={{
+              forceToAxis: true,
+            }}
+            allowTouchMove={false}
+            touchStartForcePreventDefault={true}
+            autoplay={{ delay: 5000 }}
+            onRealIndexChange={event => setCurrentSlide(event.activeIndex)}
+            onSwiper={swiper => {
+              setCurrentSwiper(swiper)
+            }}
+          >
+            {nodes.map((node, index) => (
+              <SwiperSlide className="grid grid-cols-12 pb-6">
+                <div className="col-span-10 col-start-2 md:col-span-5 md:col-start-1 py-4 md:py-0">
+                  <img srcSet={node.fluid.srcSet} className="image-shadow" />
+                </div>
+                <div className="col-span-10 col-start-2 md:col-span-6 md:col-start-7 py-4 md:py-0">
                   <span
                     dangerouslySetInnerHTML={{
                       __html: intl.formatMessage({
-                        id: `quotes.${randomIndex}.quote`,
+                        id: `quotes.${index}.quote`,
                       }),
                     }}
                     className="block text-yellow leading-tight text-2xl md:text-5xl font-bold"
@@ -58,15 +75,33 @@ const Quote = () => {
                   <span
                     dangerouslySetInnerHTML={{
                       __html: intl.formatMessage({
-                        id: `quotes.${randomIndex}.author`,
+                        id: `quotes.${index}.author`,
                       }),
                     }}
                     className="block text-yellow leading-tight uppercase mt-3"
                   />
-                </>
-              )}
-            </div>
-          </>
+                </div>
+              </SwiperSlide>
+            ))}
+          </ReactSwiper>
+          <div className="flex justify-center gap-2 mt-3">
+            {currentSwiper?.slides?.length &&
+              Array.from(
+                { length: currentSwiper?.slides?.length },
+                () => 0
+              ).map((v, index) => (
+                <button
+                  aria-label={intl.formatMessage({ id: "common.slideTo" })}
+                  style={{
+                    width: "10px",
+                    height: "10px",
+                    opacity: currentSlide === index ? `1` : `0.5`,
+                  }}
+                  onClick={() => currentSwiper?.slideTo(index)}
+                  className={`bg-yellow rounded-full`}
+                />
+              ))}
+          </div>
         </div>
       </div>
     </div>
