@@ -55,6 +55,7 @@ const Footer = () => {
           target="_blank"
           rel="noreferrer"
           className="hover:scale-108 animated flex justify-center mt-4"
+          style={{ width: "200px", height: "70px" }}
         >
           <LogoWordMark className="object-cover flex-1" />
         </a>

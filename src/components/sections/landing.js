@@ -18,6 +18,7 @@ const Landing = () => {
             <a
               href="https://www.dwenteignen.de"
               className="hover:scale-108 animated flex justify-center mt-4"
+              style={{ width: "200px", height: "70px" }}
             >
               <LogoWordMark className="object-cover flex-1" />
             </a>
@@ -28,12 +29,15 @@ const Landing = () => {
           <span className="block text-6xl md:text-7xl leading-none my-2">
             <FormattedHTMLMessage id="campaign.slogan" />
           </span>
-          <div className="w-full flex items-center my-2">
-            <div style={{ height: `${height}px` }} className="mr-2 md:mr-4">
+          <div className="w-full flex items-center justify-items-start my-2">
+            <div
+              style={{ height: `${height}px`, width: `${height}px` }}
+              className="mr-2 md:mr-4"
+            >
               <Cross className="object-cover w-full h-full" />
             </div>
             <span
-              className="text-9xl block leading-none uppercase"
+              className="text-8xl md:text-9xl block leading-none uppercase"
               ref={ref}
               dangerouslySetInnerHTML={{
                 __html: intl.formatMessage({ id: "campaign.cta.yes" }),
