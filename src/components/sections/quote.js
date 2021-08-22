@@ -36,6 +36,11 @@ const Quote = () => {
     currentSwiper?.update()
   }, [currentSwiper])
 
+  useEffect(() => {
+    currentSwiper?.autoplay.start()
+    currentSwiper?.update()
+  }, [currentSlide])
+
   return (
     <div className="bg-yellow">
       <div
