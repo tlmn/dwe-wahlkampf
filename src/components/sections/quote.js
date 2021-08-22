@@ -32,6 +32,8 @@ const Quote = () => {
   useEffect(() => {
     setCurrentSlide(randomGenerator(0, nodes.length - 1))
     currentSwiper?.slideTo(currentSlide)
+    currentSwiper?.autoplay.start()
+    currentSwiper?.update()
   }, [currentSwiper])
 
   return (
@@ -59,27 +61,29 @@ const Quote = () => {
             }}
           >
             {nodes.map((node, index) => (
-              <SwiperSlide className="grid grid-cols-12 pb-6">
-                <div className="col-span-10 col-start-2 md:col-span-5 md:col-start-1 py-4 md:py-0">
-                  <img srcSet={node.fluid.srcSet} className="image-shadow" />
-                </div>
-                <div className="col-span-10 col-start-2 md:col-span-6 md:col-start-7 py-4 md:py-0">
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: intl.formatMessage({
-                        id: `quotes.${index}.quote`,
-                      }),
-                    }}
-                    className="block text-yellow leading-tight text-2xl md:text-5xl font-bold"
-                  />
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: intl.formatMessage({
-                        id: `quotes.${index}.author`,
-                      }),
-                    }}
-                    className="block text-yellow leading-tight uppercase mt-3"
-                  />
+              <SwiperSlide>
+                <div className="grid grid-cols-12 pb-6">
+                  <div className="col-span-10 col-start-2 md:col-span-5 md:col-start-1 py-4 md:py-0">
+                    <img srcSet={node.fluid.srcSet} className="image-shadow" />
+                  </div>
+                  <div className="col-span-10 col-start-2 md:col-span-6 md:col-start-7 py-4 md:py-0">
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: intl.formatMessage({
+                          id: `quotes.${index}.quote`,
+                        }),
+                      }}
+                      className="block text-yellow leading-tight text-2xl md:text-5xl font-bold"
+                    />
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: intl.formatMessage({
+                          id: `quotes.${index}.author`,
+                        }),
+                      }}
+                      className="block text-yellow leading-tight uppercase mt-3"
+                    />
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
