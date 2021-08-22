@@ -68,12 +68,12 @@ p:last-of-type {
 }
 
 .image-shadow {
-  filter: drop-shadow(16px 16px 0px theme('colors.yellow'));
+  @apply ml-2 mt-2;
 }
 
 @screen md {
   .image-shadow {
-    filter: drop-shadow(20px 20px 0px theme('colors.yellow'));
+    @apply ml-3 mt-3;
   }
 }
 

@@ -65,7 +65,7 @@ const Quote = () => {
                 <div className="grid grid-cols-12 pb-6">
                   <div className="col-span-10 col-start-2 md:col-span-5 md:col-start-1 py-4 md:py-0 relative">
                     <img srcSet={node.fluid.srcSet} className="z-20 relative" />
-                    <div className="bg-yellow absolute w-full h-full top-0 left-0 z-10 image-shadow" />
+                    <div className="bg-yellow absolute w-full h-full top-0 left-0 z-10 ml-2 mt-2 md:ml-3 md:mt-3" />
                   </div>
                   <div className="col-span-10 col-start-2 md:col-span-6 md:col-start-7 py-4 md:py-0">
                     <span
