@@ -46,8 +46,6 @@ const Swiper = ({ children, stack = "arguments", cardColor = "yellow" }) => {
         forceToAxis: true,
       }}
       nested={true}
-      allowTouchMove={false}
-      touchStartForcePreventDefault={true}
     >
       {children}
     </ReactSwiper>
