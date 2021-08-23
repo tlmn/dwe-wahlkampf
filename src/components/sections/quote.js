@@ -37,7 +37,6 @@ const Quote = () => {
   }, [currentSwiper])
 
   useEffect(() => {
-    currentSwiper?.autoplay.start()
     currentSwiper?.update()
   }, [currentSlide])
 
@@ -103,9 +102,9 @@ const Quote = () => {
                   style={{
                     width: "10px",
                     height: "10px",
-                    opacity: currentSlide === index + 1 ? `1` : `0.5`,
+                    opacity: currentSlide === index ? `1` : `0.5`,
                   }}
-                  onClick={() => currentSwiper?.slideTo(index + 1)}
+                  onClick={() => currentSwiper?.slideTo(index)}
                   className={`bg-yellow rounded-full`}
                 />
               ))}
