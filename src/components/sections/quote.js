@@ -60,6 +60,7 @@ const Quote = () => {
             allowTouchMove={false}
             touchStartForcePreventDefault={true}
             autoplay={{ delay: 5000 }}
+            loop={true}
             onRealIndexChange={event => setCurrentSlide(event.activeIndex)}
             onSwiper={swiper => {
               setCurrentSwiper(swiper)
@@ -95,19 +96,16 @@ const Quote = () => {
             ))}
           </ReactSwiper>
           <div className="flex justify-center gap-2 mt-3">
-            {currentSwiper?.slides?.length &&
-              Array.from(
-                { length: currentSwiper?.slides?.length },
-                () => 0
-              ).map((v, index) => (
+            {nodes?.length &&
+              Array.from({ length: nodes?.length }, () => 0).map((v, index) => (
                 <button
                   aria-label={intl.formatMessage({ id: "common.slideTo" })}
                   style={{
                     width: "10px",
                     height: "10px",
-                    opacity: currentSlide === index ? `1` : `0.5`,
+                    opacity: currentSlide === index + 1 ? `1` : `0.5`,
                   }}
-                  onClick={() => currentSwiper?.slideTo(index)}
+                  onClick={() => currentSwiper?.slideTo(index + 1)}
                   className={`bg-yellow rounded-full`}
                 />
               ))}
