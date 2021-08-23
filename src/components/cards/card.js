@@ -1,17 +1,27 @@
 import React, { useState } from "react"
 import ReactCardFlip from "react-card-flip"
+import { isMobile } from "react-device-detect"
 
 const Card = ({ children, cardColor = "yellow", isFlippable = true }) => {
   const [isFlipped, setIsFlipped] = useState(false)
+
   const handleClick = () => {
     setIsFlipped(!isFlipped)
   }
 
   return (
     <>
+      {isFlipped && isMobile && (
+        <div
+          className="absolute top-0 left-0 cursor-pointer shadow bg-yellow h-full w-full z-50 flex items-center flex-col rounded-3xl py-4 px-2"
+          onClick={handleClick}
+        >
+          {children[1]}
+        </div>
+      )}
       {isFlippable ? (
         <ReactCardFlip
-          isFlipped={isFlipped}
+          isFlipped={!isMobile && isFlipped}
           flipDirection="horizontal"
           cardZIndex={50}
         >
