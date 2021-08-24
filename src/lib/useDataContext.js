@@ -6,10 +6,10 @@ export const initialState = {
   arguments: {
     activeIndex: 0,
     cardColor: "yellow",
-    length: 5,
+    length: 6,
     stack: "arguments",
   },
-  facts: { activeIndex: 0, cardColor: "purple", length: 3, stack: "facts" },
+  facts: { activeIndex: 0, cardColor: "purple", length: 4, stack: "facts" },
 }
 
 const context = createContext(initialState)
