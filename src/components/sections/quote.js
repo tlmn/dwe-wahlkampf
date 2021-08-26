@@ -14,7 +14,7 @@ const Quote = () => {
   const intl = useIntl()
   const data = useStaticQuery(graphql`
     {
-      allImageSharp(filter: { original: { src: { regex: "/quote/" } } }) {
+      allImageSharp(filter: { original: { src: { regex: "/web/" } } }) {
         nodes {
           fluid {
             originalImg
