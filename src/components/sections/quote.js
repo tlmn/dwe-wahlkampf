@@ -14,7 +14,10 @@ const Quote = () => {
   const intl = useIntl()
   const data = useStaticQuery(graphql`
     {
-      allImageSharp(filter: { original: { src: { regex: "/web/" } } }) {
+      allImageSharp(
+        filter: { original: { src: { regex: "/web/" } } }
+        sort: { order: ASC, fields: fluid___originalName }
+      ) {
         nodes {
           fluid {
             originalImg
@@ -76,15 +79,15 @@ const Quote = () => {
                     <span
                       dangerouslySetInnerHTML={{
                         __html: intl.formatMessage({
-                          id: `quotes.${index}.quote`,
+                          id: `quotes.${index + 1}.body`,
                         }),
                       }}
-                      className="block text-yellow leading-tight text-2xl md:text-5xl font-bold"
+                      className="block text-yellow leading-tight text-2xl md:text-4xl font-bold"
                     />
                     <span
                       dangerouslySetInnerHTML={{
                         __html: intl.formatMessage({
-                          id: `quotes.${index}.author`,
+                          id: `quotes.${index + 1}.author`,
                         }),
                       }}
                       className="block text-yellow leading-tight uppercase mt-3"
