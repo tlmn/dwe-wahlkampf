@@ -16,7 +16,7 @@ const IndexPage = () => {
       <About />
       <Arguments />
       <Facts />
-      {/* <Quote /> */}
+      <Quote /> 
       <Footer />
     </Layout>
   )
