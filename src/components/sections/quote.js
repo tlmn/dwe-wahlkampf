@@ -82,7 +82,7 @@ const Quote = () => {
                           id: `quotes.${index + 1}.body`,
                         }),
                       }}
-                      className="block text-yellow leading-tight text-2xl md:text-3xl font-bold"
+                      className="block text-yellow leading-tight text-xl md:text-3xl font-semibold"
                     />
                     <span
                       dangerouslySetInnerHTML={{
