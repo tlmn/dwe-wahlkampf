@@ -61,7 +61,7 @@ const Quote = () => {
             }}
             allowTouchMove={false}
             touchStartForcePreventDefault={true}
-            autoplay={{ delay: 5000 }}
+            autoplay={{ delay: 10000 }}
             loop={true}
             onRealIndexChange={event => setCurrentSlide(event.activeIndex)}
             onSwiper={swiper => {
