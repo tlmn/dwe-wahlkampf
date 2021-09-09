@@ -1,6 +1,6 @@
 import React from "react"
 
-const Arrow = ({ className, fillColor = "purple" }) => {
+const Arrow = ({ className, fillColor = "purple", ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ const Arrow = ({ className, fillColor = "purple" }) => {
       fill="none"
       viewBox="0 0 83 60"
       className={`animated ${className} fill-${fillColor}`}
+      {...props}
     >
       <path
         fillRule="evenodd"
