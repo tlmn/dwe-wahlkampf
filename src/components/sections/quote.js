@@ -54,7 +54,7 @@ const Quote = () => {
         }}
       >
         <div className="container py-6">
-          <div className="flex mb-3 justify-center items-center">
+          <div className="flex mb-5 justify-center items-center">
             <button className="mx-4" onClick={() => currentSwiper?.slidePrev()}>
               <Arrow
                 fillColor="yellow"
