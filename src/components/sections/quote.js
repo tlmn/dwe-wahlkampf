@@ -4,6 +4,7 @@ import { useIntl } from "gatsby-plugin-intl"
 import { randomGenerator } from "../../lib/lib"
 import { Swiper as ReactSwiper, SwiperSlide } from "swiper/react"
 import SwiperCore, { Autoplay, Controller } from "swiper/core"
+import Arrow from "../../assets/svg/arrow"
 
 SwiperCore.use([Autoplay, Controller])
 
@@ -53,8 +54,21 @@ const Quote = () => {
         }}
       >
         <div className="container py-6">
+          <div className="flex mb-3 justify-center items-center">
+            <button className="mx-4" onClick={() => currentSwiper?.slidePrev()}>
+              <Arrow
+                fillColor="yellow"
+                style={{ transform: "rotate(180deg)" }}
+              />
+            </button>
+            <button className="mx-4" onClick={() => currentSwiper?.slideNext()}>
+              <Arrow fillColor="yellow" />
+            </button>
+          </div>
+
           <ReactSwiper
             spaceBetween={50}
+            autoHeight={true}
             slidesPerView={1}
             mousewheel={{
               forceToAxis: true,
@@ -70,7 +84,7 @@ const Quote = () => {
           >
             {nodes.map((node, index) => (
               <SwiperSlide>
-                <div className="grid grid-cols-12 pb-6">
+                <div className="grid grid-cols-12 pb-3 md:pb-6">
                   <div className="col-span-10 col-start-2 md:col-span-5 md:col-start-1 py-4 md:py-0 relative">
                     <img srcSet={node.fluid.srcSet} className="z-20 relative" />
                     <div className="bg-yellow absolute w-full h-full top-0 left-0 z-10 ml-2 mt-2 md:ml-3 md:mt-3" />
@@ -97,7 +111,7 @@ const Quote = () => {
               </SwiperSlide>
             ))}
           </ReactSwiper>
-          <div className="flex justify-center gap-2 mt-3">
+          <div className="flex justify-center gap-2 mt-1">
             {nodes?.length &&
               Array.from({ length: nodes?.length }, () => 0).map((v, index) => (
                 <button
