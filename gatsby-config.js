@@ -33,7 +33,7 @@ module.exports = {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/data/intl`,
-        languages: [`de`],
+        languages: [`de`, `tr`],
         defaultLanguage: `de`,
         redirect: true,
       },
