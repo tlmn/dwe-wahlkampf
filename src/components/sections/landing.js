@@ -23,7 +23,7 @@ const Landing = () => {
               <LogoWordMark className="object-cover flex-1" />
             </a>
             <div className="flex flex-1 justify-end">
-              {/* <LanguageSwitch /> */}
+              <LanguageSwitch />
             </div>
           </div>
           <span className="block text-6xl md:text-7xl leading-none my-2">
