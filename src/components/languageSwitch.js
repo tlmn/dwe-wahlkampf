@@ -5,13 +5,15 @@ import CloseIcon from "../assets/svg/close"
 
 import { useTrail, animated as a } from "react-spring"
 import useDataContext from "../lib/useDataContext"
-import { changeLocale } from "gatsby-plugin-intl"
+import { changeLocale, useIntl } from "gatsby-plugin-intl"
 
 const config = { mass: 1, tension: 1000, friction: 200 }
 
 const LanguageSwitch = ({ className }) => {
+  const intl = useIntl()
+  const { locale } = intl
   const { state, setState } = useDataContext()
-  const { currentLocale, showModal } = state
+  const { showModal } = state
   const trail = useTrail(langs.length, {
     config,
     opacity: showModal ? 1 : 0,
@@ -27,7 +29,6 @@ const LanguageSwitch = ({ className }) => {
     changeLocale(newLocale)
     setState(prev => ({
       ...prev,
-      currentLocale: newLocale,
       showModal: !prev.showModal,
     }))
   }
@@ -59,7 +60,7 @@ const LanguageSwitch = ({ className }) => {
             trail.map(({ x, height, ...rest }, index) => (
               <a.button
                 className={`block uppercase text-4xl ${
-                  currentLocale === langs[index]?.code
+                  locale === langs[index]?.code
                     ? `bg-yellow text-purple`
                     : `text-yellow`
                 } rounded-3xl font-bold px-2 leading-none hover:scale-108`}

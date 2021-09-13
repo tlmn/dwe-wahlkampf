@@ -10,8 +10,7 @@ const Landing = () => {
   const intl = useIntl()
   const ref = useRef(null)
   const [height, setHeight] = useState(0)
-  const { state } = useDataContext()
-  const { currentLocale } = state
+  const { locale } = intl
   useEffect(() => setHeight(ref?.current?.clientHeight), [ref])
   return (
     <div className="bg-yellow text-purple font-bold">
@@ -32,7 +31,7 @@ const Landing = () => {
           <span className="block text-6xl md:text-7xl leading-none my-2">
             <FormattedHTMLMessage id="campaign.slogan" />
           </span>
-          {currentLocale !== "tr" && (
+          {locale !== "tr" && (
             <div className="w-full flex items-center justify-items-start my-2">
               <div
                 style={{ height: `${height}px`, width: `${height}px` }}
@@ -54,7 +53,7 @@ const Landing = () => {
               {intl.formatMessage({ id: "campaign.cta.sub.long" })}
             </Textfit>
           </div>
-          {currentLocale === "tr" && (
+          {locale === "tr" && (
             <div className="w-full flex items-center justify-items-start my-2">
               <div
                 style={{ height: `${height}px`, width: `${height}px` }}

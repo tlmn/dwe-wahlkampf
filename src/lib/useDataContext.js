@@ -1,7 +1,6 @@
 import { createContext, useContext } from "react"
 
 export const initialState = {
-  currentLocale: "de",
   showModal: false,
   arguments: {
     activeIndex: 0,
