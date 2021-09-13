@@ -3,6 +3,6 @@ export const langs = [
   { code: "tr", name: "türkçe" },
   { code: "en", name: "english" },
   { code: "pl", name: "polski" },
-  /*{ code: "ru", name: "ру́сский" },
-  { code: "einfache-sprache", name: "einfache Sprache" }, */
+  { code: "ru", name: "ру́сский" },
+  /*{ code: "einfache-sprache", name: "einfache Sprache" }, */
 ]
