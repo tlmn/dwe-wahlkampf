@@ -57,23 +57,42 @@ const LanguageSwitch = ({ className }) => {
       >
         <div className="flex flex-col items-center">
           {showModal &&
-            trail.map(({ x, height, ...rest }, index) => (
-              <a.button
-                className={`block uppercase text-4xl ${
-                  locale === langs[index]?.code
-                    ? `bg-yellow text-purple`
-                    : `text-yellow`
-                } rounded-3xl font-bold px-2 leading-none hover:scale-108`}
-                style={{
-                  ...rest,
-                  transform: x.to(x => `translate3d(0,${x}px,0)`),
-                  height: height,
-                }}
-                onClick={() => updateLocale(langs[index]?.code)}
-              >
-                {langs[index]?.name}
-              </a.button>
-            ))}
+            trail.map(({ x, height, ...rest }, index) =>
+              langs[index]?.code !== "leichte-sprache" ? (
+                <a.button
+                  className={`flex items-center uppercase text-4xl ${
+                    locale === langs[index]?.code
+                      ? `bg-yellow text-purple`
+                      : `text-yellow`
+                  } rounded-3xl font-bold px-2 leading-none hover:scale-108`}
+                  style={{
+                    ...rest,
+                    transform: x.to(x => `translate3d(0,${x}px,0)`),
+                    height: height,
+                  }}
+                  onClick={() => updateLocale(langs[index]?.code)}
+                >
+                  {langs[index]?.name}
+                </a.button>
+              ) : (
+                <a.a
+                  className={`flex items-center uppercase text-4xl ${
+                    locale === langs[index]?.code
+                      ? `bg-yellow text-purple`
+                      : `text-yellow`
+                  } rounded-3xl font-bold px-2 leading-none hover:scale-108`}
+                  style={{
+                    ...rest,
+                    transform: x.to(x => `translate3d(0,${x}px,0)`),
+                    height: height,
+                  }}
+                  href="/assets/files/Deutsche_Wohnen_Argumente_leichte_Sprache.pdf"
+                  target="_blank"
+                >
+                  leichte Sprache
+                </a.a>
+              )
+            )}
         </div>
       </button>
     </>

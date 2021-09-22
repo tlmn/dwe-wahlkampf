@@ -4,5 +4,5 @@ export const langs = [
   { code: "en", name: "english" },
   { code: "pl", name: "polski" },
   { code: "ru", name: "ру́сский" },
-  /*{ code: "einfache-sprache", name: "einfache Sprache" }, */
+  { code: "leichte-sprache", name: "leichte Sprache" },
 ]
