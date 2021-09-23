@@ -89,7 +89,7 @@ const LanguageSwitch = ({ className }) => {
                   href="/assets/files/Deutsche_Wohnen_Argumente_leichte_Sprache.pdf"
                   target="_blank"
                 >
-                  leichte Sprache
+                  leicht verständliche Sprache
                 </a.a>
               )
             )}
