@@ -1,4 +1,4 @@
-const { getConstituency, getCoordinates } = require("./lib/lib.js")
+const { getConstituency, getCoordinates } = require("../lib/lib.js")
 
 exports.handler = async function (event) {
   const {
