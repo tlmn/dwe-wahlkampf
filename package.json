@@ -3,6 +3,9 @@
   "private": true,
   "description": "A simple campaign site for Deutsche Wohnen und Co. enteignen",
   "dependencies": {
+    "axios": "^0.21.1",
+    "d3": "^5.9.2",
+    "dotenv": "^8.6.0",
     "gatsby": "^3.10.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-gatsby-cloud": "^2.10.0",
