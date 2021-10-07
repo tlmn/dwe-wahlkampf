@@ -125,7 +125,7 @@ const Letter = () => {
               )}
               {constituency?.status === "address not found" && (
                 <h3 className="text-xl text-purple text-center">
-                  Mist! Wir konnten den Wahlkreis für Deine Adresse nicht
+                  Leider konnten wir den Wahlkreis für Deine Adresse nicht
                   ermitteln. Schau noch mal, ob du Deine Straße richtig
                   geschrieben hast und tippe auch die Postleitzahl ein.
                 </h3>
