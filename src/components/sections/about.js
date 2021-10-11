@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="bg-yellow">
       <div
-        className="bg-purple flex flex-col items-center justify-center pt-16"
+        className="bg-purple flex flex-col items-center justify-center py-16"
         style={{
           clipPath:
             "polygon(0% 0%, calc(50% - 30px) 0%, 50% 30px, calc(50% + 30px) 0%, 100% 0%, 100% 101%, 0% 101%)",
@@ -19,7 +19,7 @@ const About = () => {
             {intl.formatMessage({ id: "about.title" })}
           </Title>
           <Body className="text-yellow">
-            {intl.formatMessage({id: "about.body"})}
+            {intl.formatMessage({ id: "about.body" })}
           </Body>
         </div>
       </div>
