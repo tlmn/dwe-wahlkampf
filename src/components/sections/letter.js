@@ -1,9 +1,9 @@
 import axios from "axios"
 import React, { useEffect, useRef } from "react"
-import Title from "../../atoms/title"
-import FormButton from "../../atoms/formButton"
-import LinkButton from "../../atoms/linkButton"
-import useDataContext from "../../../lib/useDataContext"
+import Title from "../atoms/title"
+import FormButton from "../atoms/formButton"
+import LinkButton from "../atoms/linkButton"
+import useDataContext from "../../lib/useDataContext"
 
 const Letter = () => {
   const { state, setState } = useDataContext()
@@ -47,9 +47,9 @@ const Letter = () => {
       .catch(err => console.log(err))
   }
   return (
-    <div className="bg-purple">
+    <div className="bg-purple" id="letter">
       <div
-        className="bg-yellow flex flex-col items-center justify-center pt-16"
+        className="bg-yellow flex flex-col items-center justify-center py-16"
         style={{
           clipPath:
             "polygon(0% 0%, calc(50% - 30px) 0%, 50% 30px, calc(50% + 30px) 0%, 100% 0%, 100% 101%, 0% 101%)",
