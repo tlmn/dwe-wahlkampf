@@ -96,7 +96,7 @@ const Letter = () => {
                     <strong>direkt verschicken oder ausdrucken</strong>.
                   </h3>
                   <div className="flex flex-col gap-2 items-center">
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 py-3">
                       <LinkButton
                         href={`mailto:test@test.de?subject=Jetzt Volksentscheid umsetzen&body=${encodeURIComponent(
                           text
