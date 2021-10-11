@@ -104,7 +104,11 @@ const Letter = () => {
                       >
                         Jetzt E-Mail senden
                       </LinkButton>
-                      <FormButton>Jetzt Brief drucken</FormButton>
+                      <FormButton
+                        onClick={() => navigator.clipboard.writeText(text)}
+                      >
+                        Text kopieren
+                      </FormButton>
                     </div>
                     <textarea
                       value={text}
