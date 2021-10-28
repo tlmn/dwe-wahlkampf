@@ -113,7 +113,7 @@ const Letter = () => {
                       {constituency?.deputee?.surname}{" "}
                       {constituency?.deputee?.familyName}
                     </strong>{" "}
-                    ({constituency?.deputee?.party}) . Unten findest Du einen
+                    ({constituency?.deputee?.party}). Unten findest Du einen
                     Textvorschlag für einen Brief oder eine E-Mail an{" "}
                     {constituency?.deputee?.gender === "male" ? `ihn` : `sie`}.
                     Du kannst den Text bearbeiten und gern um eigene Argumente
