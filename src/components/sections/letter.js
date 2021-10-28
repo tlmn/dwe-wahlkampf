@@ -115,14 +115,26 @@ const Letter = () => {
                   <div className="flex flex-col gap-2 items-center">
                     <div className="flex gap-2 py-3">
                       <LinkButton
-                        href={`mailto:test@test.de?subject=${encodeURIComponent(
+                        href={`mailto:${
+                          constituency?.deputee?.mail
+                        }?subject=${encodeURIComponent(
                           `Den Volksentscheid Deutsche Wohnen & Co enteignen jetzt umsetzen!`
                         )}&body=${encodeURIComponent(text)}`}
                       >
                         Jetzt E-Mail senden
                       </LinkButton>
                       <FormButton
-                        onClick={() => navigator.clipboard.writeText(text)}
+                        onClick={() =>
+                          navigator.clipboard.writeText(
+                            constituency?.deputee?.addressee +
+                              `\n` +
+                              constituency?.deputee?.street +
+                              `\n` +
+                              constituency?.deputee?.zipCode +
+                              `\n\n\n\n` +
+                              text
+                          )
+                        }
                       >
                         Text kopieren
                       </FormButton>
