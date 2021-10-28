@@ -82,14 +82,14 @@ const Letter = () => {
             <div className="col-span-full md:col-span-4 md:col-start-2">
               <div className="flex flex-col justify-center items-center gap-2 py-4">
                 <h3 className="text-xl text-purple">
-                  Gib <b>Deine Straße und Hausnummer</b> ein und finde Deine:n
-                  Abgeordnete:n.
+                  Gib <b>Deine Straße, Hausnummer und Bezirk</b> ein und finde
+                  Deine:n Abgeordnete:n.
                 </h3>
                 <div className="flex gap-2">
                   <input
                     ref={refAddress}
                     className="block bg-yellow text-purple placeholder-purple border-2 border-purple py-1 px-3"
-                    placeholder="Musterstraße 10"
+                    placeholder="Musterstraße 10, Charlottenburg"
                     onKeyDown={e =>
                       e.key === "Enter" &&
                       getConstituency(refAddress.current.value)
