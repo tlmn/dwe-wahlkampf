@@ -24,11 +24,18 @@ const Letter = () => {
               : `Sehr geehrte Frau`
           )
           .replace("{familyName}", constituency?.deputee?.familyName)
-          .replace("{resultYes}", parseFloat(constituency?.result?.ja) * 100)
+          .replace(
+            "{resultYes}",
+            Math.round(parseFloat(constituency?.result?.ja) * 100 * 10) / 10
+          )
           .replace("{constituencyName}", constituency?.name)
           .replace(
             "{resultDeputee}",
-            (parseFloat(constituency?.deputee?.resultDeputee) * 100)
+            (
+              Math.round(
+                parseFloat(constituency?.deputee?.resultDeputee) * 100 * 10
+              ) / 10
+            )
               .toString()
               .replace(".", ",")
           ),
@@ -105,9 +112,9 @@ const Letter = () => {
                     <strong>
                       {constituency?.deputee?.surname}{" "}
                       {constituency?.deputee?.familyName}
-                    </strong>
-                    . Unten findest Du einen Textvorschlag für einen Brief oder
-                    eine E-Mail an{" "}
+                    </strong>{" "}
+                    ({constituency?.deputee?.party}) . Unten findest Du einen
+                    Textvorschlag für einen Brief oder eine E-Mail an{" "}
                     {constituency?.deputee?.gender === "male" ? `ihn` : `sie`}.
                     Du kannst den Text bearbeiten und gern um eigene Argumente
                     und Fragen ergänzen.
