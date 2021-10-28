@@ -1,5 +1,5 @@
 import axios from "axios"
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Title from "../atoms/title"
 import FormButton from "../atoms/formButton"
 import LinkButton from "../atoms/linkButton"
@@ -9,13 +9,14 @@ const Letter = () => {
   const { state, setState } = useDataContext()
   const { constituency, text } = state.letter
   const refAddress = useRef(null)
+  const [random, setRandom] = useState(0)
 
   useEffect(() => {
     setState(prev => ({
       ...prev,
       letter: {
         ...prev.letter,
-        text: prev.letter.textInitial
+        text: prev.letter.initialTexts[random]
           .replace(
             "{salutation}",
             constituency?.deputee?.gender === "male"
@@ -24,10 +25,20 @@ const Letter = () => {
           )
           .replace("{familyName}", constituency?.deputee?.familyName)
           .replace("{resultYes}", parseFloat(constituency?.result?.ja) * 100)
-          .replace("{constituencyName}", constituency?.name),
+          .replace("{constituencyName}", constituency?.name)
+          .replace(
+            "{resultDeputee}",
+            (parseFloat(constituency?.deputee?.resultDeputee) * 100)
+              .toString()
+              .replace(".", ",")
+          ),
       },
     }))
   }, [state.letter.constituency])
+
+  useEffect(() => {
+    setRandom(Math.floor(Math.random() * 2))
+  }, [])
 
   const getConstituency = address => {
     let config = {
@@ -87,12 +98,19 @@ const Letter = () => {
               {constituency?.status === "address found" && (
                 <>
                   <h3 className="text-xl text-purple text-center">
-                    Dein:e direkt gewählte:r Abgeordnete:r im Wahlkreis{" "}
-                    <strong>Wahlkreis {constituency?.name}</strong> ist{" "}
-                    <strong>{constituency?.deputee?.name}</strong>. Unten
-                    findest Du einen Textvorschlag für einen Brief oder eine
-                    E-Mail an sie:ihn. Du kannst den Text bearbeiten und gern um
-                    eigene Argumente und Fragen ergänzen.
+                    {constituency?.deputee?.gender === "male"
+                      ? `Dein direkt gewählter Abgeordneter`
+                      : `Deine direkt gewählte Abgeordnete`}{" "}
+                    im Wahlkreis <strong>{constituency?.name}</strong> ist{" "}
+                    <strong>
+                      {constituency?.deputee?.surname}{" "}
+                      {constituency?.deputee?.familyName}
+                    </strong>
+                    . Unten findest Du einen Textvorschlag für einen Brief oder
+                    eine E-Mail an{" "}
+                    {constituency?.deputee?.gender === "male" ? `ihn` : `sie`}.
+                    Du kannst den Text bearbeiten und gern um eigene Argumente
+                    und Fragen ergänzen.
                   </h3>
                   <div className="flex flex-col gap-2 items-center">
                     <div className="flex gap-2 py-3">
