@@ -23,7 +23,8 @@ const Letter = () => {
               : `Sehr geehrte Frau`
           )
           .replace("{familyName}", constituency?.deputee?.familyName)
-          .replace("{resultYes}", parseFloat(constituency?.result?.ja) * 100),
+          .replace("{resultYes}", parseFloat(constituency?.result?.ja) * 100)
+          .replace("{constituencyName}", constituency?.name),
       },
     }))
   }, [state.letter.constituency])
@@ -55,7 +56,7 @@ const Letter = () => {
             "polygon(0% 0%, calc(50% - 30px) 0%, 50% 30px, calc(50% + 30px) 0%, 100% 0%, 100% 101%, 0% 101%)",
         }}
       >
-        <div className="flex flex-col justify-center w-full">
+        <div className="flex flex-col justify-center w-full container">
           <Title className="text-yellow bg-purple">
             Schreib deiner:m Abgeordneten!
           </Title>
@@ -86,21 +87,19 @@ const Letter = () => {
               {constituency?.status === "address found" && (
                 <>
                   <h3 className="text-xl text-purple text-center">
-                    Dein:e direkt gewählte:r Abgeordnete:r im{" "}
+                    Dein:e direkt gewählte:r Abgeordnete:r im Wahlkreis{" "}
                     <strong>Wahlkreis {constituency?.name}</strong> ist{" "}
-                    <strong>{constituency?.deputee?.name}</strong>. <br /> Unten
+                    <strong>{constituency?.deputee?.name}</strong>. Unten
                     findest Du einen Textvorschlag für einen Brief oder eine
-                    E-Mail.
-                    <br />
-                    Du kannst den Text bearbeiten und mit den Buttons{" "}
-                    <strong>direkt verschicken oder ausdrucken</strong>.
+                    E-Mail an sie:ihn. Du kannst den Text bearbeiten und gern um
+                    eigene Argumente und Fragen ergänzen.
                   </h3>
                   <div className="flex flex-col gap-2 items-center">
                     <div className="flex gap-2 py-3">
                       <LinkButton
-                        href={`mailto:test@test.de?subject=Jetzt Volksentscheid umsetzen&body=${encodeURIComponent(
-                          text
-                        )}`}
+                        href={`mailto:test@test.de?subject=${encodeURIComponent(
+                          `Den Volksentscheid Deutsche Wohnen & Co enteignen jetzt umsetzen!`
+                        )}&body=${encodeURIComponent(text)}`}
                       >
                         Jetzt E-Mail senden
                       </LinkButton>

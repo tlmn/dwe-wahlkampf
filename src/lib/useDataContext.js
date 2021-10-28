@@ -13,7 +13,7 @@ export const initialState = {
     constituency: {},
     text: "",
     textInitial:
-      '{salutation} {familyName},\n1,04 Millionen Berliner:innen haben für den Volksentscheid "Deutsche Wohnen & Co. enteignen" gestimmt! Damit hat sich eine große Mehrheit für die Enteignung großer Wohnungskonzerne ausgesprochen. Auch in Ihrem Wahlkreis stimmten {resultYes}% für den Volksentscheid. Auch ich unterstütze die Enteignungspläne. Nur so kann die Mietenkrise in Berlin wirklich gestoppt werden.',
+      "{salutation} {familyName},\n\nAm 26. September haben über 1 Million Berliner:innen für die Vergesellschaftung großer Wohnungsunternehmen gestimmt. Die Initiative Deutsche Wohnen & Co enteignen war somit erfolgreich. Daraus ergibt sich für gewählte Volksvertreter:innen ein klarer demokratischer Auftrag. \nSie wurden in meinem Wahlbezirk {constituencyName} gewählt. Sie stehen also in der Verantwortung, im Sinne von 59,1 % der gültigen Stimmen der Berliner Bevölkerung den Volksentscheid jetzt umzusetzen.\nIch fordere Sie mit diesem Schreiben auf, im Sinne des Volksentscheids den Prozess der Enteignung privater, profitorientierter Immobiliengesellschaften nach Artikel 15 Grundgesetz wie demokratisch beschlossen auf den Weg zu bringen sowie Ihre Wähler:innen regelmäßig darüber zu informieren, welche entsprechenden Maßnahmen Sie im Abgeordnetenhaus ergriffen haben.\n\nMit freundlichen Grüßen,",
   },
 }
 
