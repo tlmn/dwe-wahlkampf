@@ -25,7 +25,7 @@ const Landing = () => {
               <LanguageSwitch />
             </div>
           </div>
-          <span className="block text-6xl md:text-7xl leading-none my-2">
+          <span className="block text-5xl md:text-6xl leading-none my-2">
             <FormattedHTMLMessage id="campaign.slogan" />
           </span>
         </div>

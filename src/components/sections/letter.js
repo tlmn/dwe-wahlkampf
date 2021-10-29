@@ -85,11 +85,11 @@ const Letter = () => {
                   Gib <b>Deine Straße, Hausnummer und Bezirk</b> ein und finde
                   Deine:n Abgeordnete:n.
                 </h3>
-                <div className="flex gap-2">
+                <div className="flex flex-col md:flex-row gap-2">
                   <input
                     ref={refAddress}
-                    className="block bg-yellow text-purple placeholder-purple border-2 border-purple py-1 px-3"
-                    placeholder="Musterstraße 10, Charlottenburg"
+                    className="block bg-yellow text-center text-purple placeholder-purple border-2 border-purple py-1 px-3"
+                    placeholder="Musterstraße 10, Bezirk"
                     onKeyDown={e =>
                       e.key === "Enter" &&
                       getConstituency(refAddress.current.value)
@@ -113,8 +113,9 @@ const Letter = () => {
                       {constituency?.deputee?.surname}{" "}
                       {constituency?.deputee?.familyName}
                     </strong>{" "}
-                    ({constituency?.deputee?.party}). Unten findest Du einen
-                    Textvorschlag für einen Brief oder eine E-Mail an{" "}
+                    ({constituency?.deputee?.party}).
+                    <br /> Unten findest Du einen Textvorschlag für einen Brief
+                    oder eine E-Mail an{" "}
                     {constituency?.deputee?.gender === "male" ? `ihn` : `sie`}.
                     Du kannst den Text bearbeiten und gern um eigene Argumente
                     und Fragen ergänzen.
@@ -158,7 +159,7 @@ const Letter = () => {
                           },
                         }))
                       }
-                      className="bg-yellow text-purple placeholder-purple border-2 border-purple py-1 px-3 resize-none w-5/6 md:w-3/4"
+                      className="bg-yellow text-purple placeholder-purple border-2 border-purple py-1 px-3 resize-none w-full md:w-3/4"
                     />
                   </div>
                 </>
