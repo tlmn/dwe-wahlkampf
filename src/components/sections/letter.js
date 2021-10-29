@@ -27,7 +27,7 @@ const Letter = () => {
             "{title}",
             constituency?.deputee?.title !== ""
               ? constituency?.deputee?.title + ` `
-              : ` `
+              : ``
           )
           .replace("{familyName}", constituency?.deputee?.familyName)
           .replace(
