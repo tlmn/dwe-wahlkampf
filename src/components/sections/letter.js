@@ -66,7 +66,7 @@ const Letter = () => {
       .catch(err => console.log(err))
   }
   return (
-    <div className="bg-purple" id="letter">
+    <div className="bg-purple" id="brief">
       <div
         className="bg-yellow flex flex-col items-center justify-center py-16"
         style={{
