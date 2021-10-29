@@ -23,6 +23,12 @@ const Letter = () => {
               ? `Sehr geehrter Herr`
               : `Sehr geehrte Frau`
           )
+          .replace(
+            "{title}",
+            constituency?.deputee?.title !== ""
+              ? constituency?.deputee?.title + ` `
+              : ` `
+          )
           .replace("{familyName}", constituency?.deputee?.familyName)
           .replace(
             "{resultYes}",
