@@ -7,7 +7,6 @@ import Letter from "../components/sections/letter"
 const LetterPage = () => {
   return (
     <Layout>
-      <Landing />
       <About />
       <Letter />
     </Layout>
