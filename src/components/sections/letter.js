@@ -32,7 +32,9 @@ const Letter = () => {
           .replace("{familyName}", constituency?.deputee?.familyName)
           .replace(
             "{resultYes}",
-            Math.round(parseFloat(constituency?.result?.ja) * 100 * 10) / 10
+            (Math.round(parseFloat(constituency?.result?.ja) * 100 * 10) / 10)
+              .toString()
+              .replace(".", ",")
           )
           .replace("{constituencyName}", constituency?.name)
           .replace(
@@ -95,7 +97,7 @@ const Letter = () => {
                   <input
                     ref={refAddress}
                     className="block bg-yellow text-center text-purple placeholder-purple border-2 border-purple py-1 px-3"
-                    placeholder="Musterstraße 10, Bezirk"
+                    placeholder="Deine Straße, Dein Bezirk"
                     onKeyDown={e =>
                       e.key === "Enter" &&
                       getConstituency(refAddress.current.value)
