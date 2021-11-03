@@ -134,7 +134,7 @@ const Letter = () => {
                         href={`mailto:${
                           constituency?.deputee?.mail
                         }?subject=${encodeURIComponent(
-                          `Den Volksentscheid Deutsche Wohnen & Co enteignen jetzt umsetzen!`
+                          `Setzen Sie den Volksentscheid „Deutsche Wohnen & Co enteignen“ jetzt um!`
                         )}&body=${encodeURIComponent(text)}`}
                       >
                         Jetzt E-Mail senden
