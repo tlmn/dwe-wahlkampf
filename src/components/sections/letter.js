@@ -90,14 +90,14 @@ const Letter = () => {
             <div className="col-span-full md:col-span-4 md:col-start-2">
               <div className="flex flex-col justify-center items-center gap-2 py-4">
                 <h3 className="text-xl text-purple">
-                  Gib <b>Deine Straße, Hausnummer und Bezirk</b> ein und finde
-                  Deine:n Abgeordnete:n.
+                  Gib <b>Deine Straße, Hausnummer und Postleitzahl</b> ein und
+                  finde Deine:n Abgeordnete:n.
                 </h3>
                 <div className="flex flex-col md:flex-row gap-2">
                   <input
                     ref={refAddress}
                     className="block bg-yellow text-center text-purple placeholder-purple border-2 border-purple py-1 px-3"
-                    placeholder="Deine Straße, Dein Bezirk"
+                    placeholder="Deine Straße, Dein Postleitzahl"
                     onKeyDown={e =>
                       e.key === "Enter" &&
                       getConstituency(refAddress.current.value)
