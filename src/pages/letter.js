@@ -9,7 +9,7 @@ const LetterPage = () => {
   return (
     <Layout>
       <Seo />
-      <Landing />
+      <Landing showLanguageSwitch={false} />
       <About />
       <Letter />
     </Layout>

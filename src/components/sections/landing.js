@@ -3,7 +3,7 @@ import LogoWordMark from "../../assets/svg/logoWordMark"
 import LanguageSwitch from "../languageSwitch"
 import { FormattedHTMLMessage, useIntl } from "gatsby-plugin-intl"
 
-const Landing = () => {
+const Landing = ({ showLanguageSwitch = true }) => {
   const intl = useIntl()
   const ref = useRef(null)
   const [height, setHeight] = useState(0)
@@ -21,7 +21,11 @@ const Landing = () => {
             >
               <LogoWordMark className="object-cover flex-1" />
             </a>
-            <div className="flex flex-1 justify-end">
+            <div
+              className={`flex flex-1 justify-end ${
+                !showLanguageSwitch ? `hidden` : ``
+              }`}
+            >
               <LanguageSwitch />
             </div>
           </div>
