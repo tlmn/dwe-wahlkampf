@@ -58,7 +58,7 @@ const Letter = () => {
   const getConstituency = address => {
     let config = {
       method: "get",
-      url: `https://dwe-abgeordnetencheck.onrender.com/?address=${encodeURIComponent(
+      url: `https://dwe-deputees-check.fly.dev/?address=${encodeURIComponent(
         address
       )}`,
       headers: {},
